@@ -30,7 +30,7 @@ function onClick() {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 .view1-root {
   background-color: gray;
   margin-bottom: 10px;

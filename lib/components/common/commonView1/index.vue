@@ -1,23 +1,22 @@
 <template>
-  <div class="view2-root">
-    view3
-    <div>props.msg: {{ msg }}</div>
+  <div class="common-view1-root">
+    common-view1
+    <div class="msg">props.msg: {{ msg }}</div>
   </div>
 </template>
 
 <script setup>
-// import '../shoelace.js';
 import { ref, computed, watch, onMounted } from 'vue';
 
 defineOptions({
-  name: 'WCView3'
+  name: 'CommonView1'
 });
 const props = defineProps({
   msg: String
 });
 const emit = defineEmits(['btn-click', 'update:msg']);
 onMounted(() => {
-  console.log('view3 onMounted');
+  console.log('common-view1 onMounted');
 });
 defineExpose({
   getCount() {
@@ -36,7 +35,7 @@ const computedValue = computed(() => {
 watch(
   () => props.msg,
   (newVal, oldVal) => {
-    console.log('view3 watch props.msg changed', newVal, oldVal);
+    console.log('common-view1 watch props.msg changed', newVal, oldVal);
   }
 );
 
@@ -51,9 +50,12 @@ function onUpdateMsgClick() {
 }
 </script>
 
-<style scoped>
-.view3-root {
-  background-color: gray;
+<style scoped lang="scss">
+.common-view1-root {
+  background-color: pink;
   margin-bottom: 10px;
+  .msg {
+    color: red;
+  }
 }
 </style>

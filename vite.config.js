@@ -4,6 +4,10 @@ import vue from '@vitejs/plugin-vue';
 export default defineConfig({
   plugins: [
     vue({
+      // features: {
+      //   // 所有的.vue文件都被视为自定义元素，现实情况是只在entry中定义的入口组件才需被视为自定义元素，所以显示的通过默认以特定文件名(.ce.vue)的方式来标识该组件是否被视为自定义元素
+      //   customElement: true
+      // },
       template: {
         compilerOptions: {
           comments: false,
